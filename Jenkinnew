@@ -9,7 +9,6 @@ pipeline{
 		stage("Maven build"){
 			steps{
 				sh "mvn clean package"
-				sh "mv /var/lib/jenkins/workspace/DECLARATIVE_JOB/webapp/target"
 			}
 		}
 		stage("Deploy Tomcat"){
