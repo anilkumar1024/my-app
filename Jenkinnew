@@ -16,7 +16,7 @@ pipeline{
 			steps{
 				sshagent(['tomcatnew']) {
 					sh """
-					    scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/DECLARATIVE_JOB/webapp/target/webapp.tar ec2-user@172.31.42.120:/home/ec2-user/apache-tomcat-8.5.57/webapps/
+					    scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/DECLARATIVE_JOB/webapp/target/webapp.war ec2-user@172.31.42.120:/home/ec2-user/apache-tomcat-8.5.57/webapps/
 					    ssh ec2-user@172.31.42.120/home/ec2-user/apache-tomcat-8.5.57/shutdown.sh
 					    ssh ec2-user@172.31.42.120/home/ec2-user/apache-tomcat-8.5.57/start.sh
 					"""
